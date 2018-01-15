@@ -54,5 +54,18 @@
     <script>window.jQuery || document.write('<script src="static/jquery-slim.min.js"><\/script>')</script>
     <script src="static/popper.min.js"></script>
     <script src="static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.custom-file-input').on('change', function() {
+            let fileName = $(this).val().split('\\').pop();
+            $(this).next('.custom-file-control').addClass("selected").html(fileName);
+        });
+
+        $('#add-secondary-library').click(function() {
+          $('.secondary-libraries-fields').append($('<div class="form-row" style="margin-bottom: 12px;"><div class="col-md-8"><input type="file" class="custom-file-input" name="secundaria[]" id="validatedCustomFile" required><label class="custom-file-label" for="validatedCustomFile">Biblioteca Secundaria</label></div><div class="col-md-2" style="margin-left: 60px;"><input type="text" class="form-control" placeholder="Sufijo"></div></div>'));
+           $('form input:file').last().after($('<input type="file" name="files[]" class="file" /><br />'));
+        });
+      });
+    </script>
   </body>
 </html>

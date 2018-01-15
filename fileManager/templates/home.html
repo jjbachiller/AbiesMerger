@@ -5,33 +5,58 @@
   <div class="row">
     <div class="col">
       <div class="form-row">
-          <div class="card">
-            <div class="card-body">
-              <div class="col-md-6">
-                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                <label class="custom-file-label" for="validatedCustomFile">Biblioteca Principal</label>
+        <div class="card" style="background-color: transparent; padding: 13px 0;">
+          <div class="card-body">
+            <h5 class="card-title">Biblioteca Base</h5>
+            <h6 class="card-subtitle mb-2 text-muted"> (archivo zip) </h6>
+            <p class="card-text">Selecciona la biblioteca sobre la que se van importar los datos de las demás bibliotecas.</p>
+            <div class="form-row">
+              <div class="col-md-10">
+                <input type="file" class="custom-file-input" name="principal" id="validatedCustomFile" required>
+                <label class="custom-file-label" for="validatedCustomFile">Biblioteca Base</label>
               </div>
             </div>
+            <div class="form-row" style="height: 23px;">
+            </div>
           </div>
+        </div>
       </div>
+
     </div>
 
     <div class="col">
-      <div class="form-row">
-        <div class="col-md-6">
-          <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-          <label class="custom-file-label" for="validatedCustomFile">Biblioteca Secundaria</label>
-        </div>
+      <div class="card" style="background-color: transparent;">
+        <div class="card-body">
+          <h5 class="card-title">Biblioteca/s Secundaria/s</h5>
+          <h6 class="card-subtitle mb-2 text-muted"> (archivo zip) </h6>
+          <p class="card-text">Seleccione los archivos de bibliotecas que se van a anexar a la biblioteca base.</p>
 
-        <div class="col-md-2">
-          <input type="text" class="form-control" placeholder="Sufijo">
+          <div class="secondary-libraries-fields">
+
+            <div class="form-row" style="margin-bottom: 12px;">
+              <div class="col-md-8">
+                <input type="file" class="custom-file-input" name="secundaria[]" id="validatedCustomFile" required>
+                <label class="custom-file-label" for="validatedCustomFile">Biblioteca Secundaria</label>
+              </div>
+
+              <div class="col-md-2" style="margin-left: 60px;">
+                <input type="text" class="form-control" placeholder="Sufijo">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-row">
+            <input type="button" class="btn btn-light" name="add-secondary-library" id="add-secondary-library" value="Añadir otra biblioteca secundaria">
+          </div>
         </div>
-      </div>
-      <div class="form-row" style="margin-top: 12px;">
-        <input type="button" class="btn btn-light" name="add-secondary-library" value="Añadir otra biblioteca secundaria">
       </div>
     </div>
   </div>
-  <input type="submit" value="Combinar Bibliotecas >>" class="btn btn-warning">
+  <div class="row" style="float: right;">
+    <div style="padding: 17px;">
+      <input type="submit" value="Combinar Bibliotecas >>" class="btn btn-warning">
+    </div>
+  </div>
 </form>
 {% endblock %}
