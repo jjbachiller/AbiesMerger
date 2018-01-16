@@ -18,4 +18,6 @@ from fileManager import views
 
 urlpatterns = [
     url(r'^$', views.home_page, name='home'),
+    url(r'^upload/$', views.upload, name='upload'),
+    url(r'^merge/$', views.merge, name='merge'),
 ]

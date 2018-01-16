@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="static/favicon.ico">
+    <link rel="icon" href="/static/favicon.ico">
 
     <title>Combinación de bibliotecas - Abies</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="static/cover.css" rel="stylesheet">
+    <link href="/static/cover.css" rel="stylesheet">
+
+    <!-- File input -->
+    <link href="/static/bootstrap-fileinput/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -26,9 +29,14 @@
 
           <header class="masthead clearfix">
             <div class="inner">
-              <h3>Combinación de bilbliotecas Abies</h3>
+              <h3>Combinación de bilbliotecas Abies (BETA)</h3>
             </div>
           </header>
+
+          {% if error %}
+          <div class="alert alert-danger">ERROR: {{ error }}</div>
+          {% endif %}
+
         </div>
         <div class="container">
           <main role="main" class="inner cover">
@@ -51,19 +59,32 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="static/jquery-slim.min.js"><\/script>')</script>
-    <script src="static/popper.min.js"></script>
-    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/jquery-slim.min.js"><\/script>')</script>
+
+    <!-- File input -->
+    <script src="/static/bootstrap-fileinput/js/plugins/piexif.min.js" type="text/javascript"></script>
+    <script src="/static/bootstrap-fileinput/js/fileinput.min.js"></script>
+
+    <script src="/static/popper.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
+        $(".libraryUploader").fileinput({
+          browseClass: "btn btn-warning",
+          browseLabel: "Seleccionar",
+        });
+
         $('.custom-file-input').on('change', function() {
             let fileName = $(this).val().split('\\').pop();
             $(this).next('.custom-file-control').addClass("selected").html(fileName);
         });
 
-        $('#add-secondary-library').click(function() {
-          $('.secondary-libraries-fields').append($('<div class="form-row" style="margin-bottom: 12px;"><div class="col-md-8"><input type="file" class="custom-file-input" name="secundaria[]" id="validatedCustomFile" required><label class="custom-file-label" for="validatedCustomFile">Biblioteca Secundaria</label></div><div class="col-md-2" style="margin-left: 60px;"><input type="text" class="form-control" placeholder="Sufijo"></div></div>'));
-           $('form input:file').last().after($('<input type="file" name="files[]" class="file" /><br />'));
+        $('#add-secondary-library').on('click', function() {
+          $('#secondary-libraries-fields').append($('#bsecundaria-copy-block').html());
+        });
+
+        $(document.body).on('click', '.remove-bsecundaria', function() {
+          $(this).closest('.bsecundaria-block').remove();
         });
       });
     </script>
