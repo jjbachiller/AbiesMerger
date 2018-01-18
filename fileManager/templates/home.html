@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="{% url 'upload' %}" method="post" style="text-align: left;">
+<form action="{% url 'merge' %}" method="post" style="text-align: left;">
   {% csrf_token %}
   <div class="row">
 
@@ -46,6 +46,7 @@
           </div>
           <div class="form-row">
             <div class="col">
+
               <input type="button" class="btn btn-light" name="add-secondary-library" id="add-secondary-library" value="Añadir otra biblioteca secundaria">
             </div>
           </div>
