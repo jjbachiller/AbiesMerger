@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="{% url 'merge' %}" method="post" style="text-align: left;">
+<form action="{% url 'merge' %}" method="post" enctype="multipart/form-data" style="text-align: left;">
   {% csrf_token %}
   <div class="row">
 
