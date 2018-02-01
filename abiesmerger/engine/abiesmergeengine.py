@@ -16,7 +16,7 @@ class AbiesMergeEngine():
         self.suffix = suffix
 
     def addSufixToValue(self, sectionName, attrName):
-        if (self.suffix is None):
+        if (not self.suffix):
             return
 
         # rootSecondary = self.secondary.getroot()

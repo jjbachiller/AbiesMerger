@@ -4,8 +4,7 @@
 	</Cursos>
 	<TiposEjemplar>
 		<TipoEjemplar IdTipoEjemplar="1" TipoEjemplar="NO PRESTABLE" />
-	<TipoEjemplar IdTipoEjemplar="2" TipoEjemplar="Normal" />
-		</TiposEjemplar>
+	</TiposEjemplar>
 	<Ubicaciones>
 		<Ubicacion IdUbicacion="1" Ubicacion="Biblioteca" />
 	</Ubicaciones>
@@ -14,8 +13,6 @@
 	</Procedencias>
 	<Autores>
 		<Autor IdAutor="1" Nombre="Afanasiev" TipoAutor="Persona" />
-	<Autor IdAutor="2" Nombre="Simon, Francesca" TipoAutor="Persona" />
-		<Autor IdAutor="3" Nombre="Armijo, Consuelo" TipoAutor="Persona" />
 	</Autores>
 	<TiposLector>
 		<TipoLector Ejemplares="1" IdTipoLector="1" TipoLector="ALUMNO">
@@ -210,18 +207,12 @@
 	</Funciones>
 	<Aplicaciones>
 		<Aplicacion Aplicacion="Educaci&#243;n Infantil : Segundo Ciclo (3-6 a&#241;os)" IdAplicacion="2" />
-	<Aplicacion Aplicacion="Educaci&#243;n Infantil : Primer Ciclo (0-3 a&#241;os)" IdAplicacion="3" />
-		<Aplicacion Aplicacion="Educaci&#243;n Infantil : Segundo Ciclo (3-6 a&#241;os)" IdAplicacion="4" />
 	</Aplicaciones>
 	<Descriptores>
 		<Descriptor Descriptor="Alma" IdDescriptor="259" />
-	<Descriptor Descriptor="Abad&#237;as" IdDescriptor="260" />
-		<Descriptor Descriptor="Abalorios" IdDescriptor="261" />
 	</Descriptores>
 	<Editoriales>
 		<Editorial Editorial="Doncel" IdEditorial="3" />
-	<Editorial Editorial="SM" IdEditorial="4" />
-		<Editorial Editorial="S.M." IdEditorial="5" />
 	</Editoriales>
 	<Paises>
 		<Pais ClavePais="3" Pais="Reino unido" />
@@ -496,38 +487,6 @@
 			</FondoAplicaciones>
 			<FondoDescriptores>
 				<Descriptor IdDescriptor="259" />
-			</FondoDescriptores>
-		</Fondo>
-	<Fondo CaracteristicasFisicas=": il." CodigoExterno="20090000001" CodigoLocal="20090000001" DepositoLegal="M 31732-2002" Dimensiones="; 19 cm" Edicion="7&#170; ed" Editorial="4" Extension="96 p." FechaEdicion="2005" FechaPublicacion1="2002" ISBN="84-348-9005-4" ISBN2="8434890054" IdAutor="2" IdTipoFondo="1" IntroInfo="091130" Lengua="spa" LugarPublicacion="Madrid" Pais="esp" RestoPortada="/ Francesca Simon ; ilustraciones de Tony Ross" Titulo="Pablo Diablo y el club secreto" Transaccion="20091130:11320534">
-			<Ejemplares>
-				<Ejemplar CodigoEjemplar="000293V" FechaAlta="30/11/2009" IdTiposEjemplar="2" NumEjemplar="1" NumRegistro="1" Prestado="False" Sig1="82" Sig2="SIM" Sig3="pab" />
-			</Ejemplares>
-			<Prestamos />
-			<FuncionesAutor />
-			<CDUs>
-				<CDU Codigo="82" />
-			</CDUs>
-			<FondoAplicaciones>
-				<FondoAplicacion IdAplicacion="3" />
-			</FondoAplicaciones>
-			<FondoDescriptores>
-				<Descriptor IdDescriptor="260" />
-			</FondoDescriptores>
-		</Fondo>
-		<Fondo CaracteristicasFisicas=": il." CodigoExterno="20090000002" CodigoLocal="20090000002" DepositoLegal="M 27682-2002" Dimensiones="; 19 cm" Edicion="7&#170; ed" Editorial="5" Extension="94 p." FechaEdicion="2006" FechaPublicacion1="2002" ISBN="84-348-8974-9" ISBN2="8434889749" IdAutor="3" IdTipoFondo="1" IntroInfo="091130" Lengua="spa" LugarPublicacion="Madrid" Pais="esp" RestoPortada="/ Francesca Simon ; ilustraciones de Tony Ross" Titulo="Pablo Diablo y los fantasmas" Transaccion="20091130:12302450">
-			<Ejemplares>
-				<Ejemplar CodigoEjemplar="000294H" FechaAlta="30/11/2009" IdTiposEjemplar="2" NumEjemplar="1" NumRegistro="2" Prestado="False" Sig1="82" Sig2="SIM" Sig3="pab" />
-			</Ejemplares>
-			<Prestamos />
-			<FuncionesAutor />
-			<CDUs>
-				<CDU Codigo="82" />
-			</CDUs>
-			<FondoAplicaciones>
-				<FondoAplicacion IdAplicacion="4" />
-			</FondoAplicaciones>
-			<FondoDescriptores>
-				<Descriptor IdDescriptor="261" />
 			</FondoDescriptores>
 		</Fondo>
 	</Fondos>
