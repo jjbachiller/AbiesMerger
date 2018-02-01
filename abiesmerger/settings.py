@@ -119,3 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Project constants
+ABIES_ZIP_FILE = "ExportAbies2.zip"
+DOWNLOAD_FOLDER = "downloads"
+
+# Media downloads
+MEDIA_ROOT = os.path.join(BASE_DIR, DOWNLOAD_FOLDER)
+MEDIA_URL = "downloads/"

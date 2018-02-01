@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/static/favicon.ico">
+    <link rel="icon" href="{% static "/favicon.ico" %}">
 
     <title>Combinación de bibliotecas - Abies</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static "bootstrap/css/bootstrap.min.css"%}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/static/cover.css" rel="stylesheet">
+    <link href="{% static "cover.css" %}" rel="stylesheet">
 
     <!-- File input -->
-    <link href="/static/bootstrap-fileinput/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="{% static "bootstrap-fileinput/css/fileinput.min.css" %}" media="all" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -33,10 +34,14 @@
             </div>
           </header>
 
-          {% if errors %}
-            {% for error in errors %}
-              <div class="alert alert-danger">ERROR: {{ error }}</div>
-            {% endfor %}
+          {% if messages %}
+          <div class="alert alert-danger">
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>            
+          </div>
           {% endif %}
 
         </div>
@@ -61,14 +66,14 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/static/jquery-slim.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="{% static "jquery-slim.min.js" %}"><\/script>')</script>
 
     <!-- File input -->
-    <script src="/static/bootstrap-fileinput/js/plugins/piexif.min.js" type="text/javascript"></script>
-    <script src="/static/bootstrap-fileinput/js/fileinput.min.js"></script>
+    <script src="{% static "bootstrap-fileinput/js/plugins/piexif.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "bootstrap-fileinput/js/fileinput.min.js" %}"></script>
 
-    <script src="/static/popper.min.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{% static "popper.min.js" %}"></script>
+    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         $(".libraryUploader").fileinput({

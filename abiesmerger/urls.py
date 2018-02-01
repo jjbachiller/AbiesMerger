@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from fileManager import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.home_page, name='home'),
     url(r'^merge/$', views.merge, name='merge'),
-    url(r'^download/$', views.download, name='download'),
-]
+    url(r'^download/(?P<folder>[\w-]+)/$', views.download, name='download'),
+    # url(r'^downloads/(?P<folder>[\w-]+)/' + settings.ABIES_ZIP_FILE + '$', views.downloadFile, name='downloadFile')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

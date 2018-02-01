@@ -1,0 +1,390 @@
+<Fichero>
+	<Cursos/>
+	<TiposEjemplar>
+		<TipoEjemplar IdTipoEjemplar="2" TipoEjemplar="No prestable"/>
+		<TipoEjemplar IdTipoEjemplar="3" TipoEjemplar="Restringido"/>
+		<TipoEjemplar IdTipoEjemplar="4" TipoEjemplar="normal"/>
+	</TiposEjemplar>
+	<Ubicaciones>
+		<Ubicacion IdUbicacion="1" Ubicacion="El WC"/>
+		<Ubicacion IdUbicacion="2" Ubicacion="SalaProf"/>
+		<Ubicacion IdUbicacion="3" Ubicacion="Aula Estable"/>
+	</Ubicaciones>
+	<Procedencias/>
+	<Autores>
+		<Autor IdAutor="171" TipoAutor="Persona" Nombre="Irish, William"/>
+		<Autor IdAutor="172" TipoAutor="Persona" Nombre="Sturniolo, Norma"/>
+		<Autor IdAutor="173" TipoAutor="Persona" Nombre="Dickens, Charles"/>
+	</Autores>
+	<TiposLector>
+		<TipoLector IdTipoLector="1" TipoLector="Alumno" Ejemplares="15">
+			<Politicas IdTipoEjemplar="1" Dias="15"/>
+			<Politicas IdTipoEjemplar="2" Dias="0"/>
+			<Politicas IdTipoEjemplar="3" Dias="7"/>
+			<Politicas IdTipoEjemplar="4" Dias="1"/>
+		</TipoLector>
+		<TipoLector IdTipoLector="2" TipoLector="Profesor" Ejemplares="9">
+			<Politicas IdTipoEjemplar="1" Dias="15"/>
+			<Politicas IdTipoEjemplar="2" Dias="0"/>
+			<Politicas IdTipoEjemplar="3" Dias="7"/>
+			<Politicas IdTipoEjemplar="4" Dias="1"/>
+		</TipoLector>
+		<TipoLector IdTipoLector="3" TipoLector="Padres" Ejemplares="24">
+			<Politicas IdTipoEjemplar="1" Dias="1"/>
+			<Politicas IdTipoEjemplar="2" Dias="1"/>
+			<Politicas IdTipoEjemplar="3" Dias="1"/>
+			<Politicas IdTipoEjemplar="4" Dias="1"/>
+		</TipoLector>
+	</TiposLector>
+	<Lectores/>
+	<Centros>
+		<Centro Nombre="C:P. Ntra Sra de la Asunci&#243;n" Direccion="C/ C&#225;ceres, 7" Localidad="Casillas de Coria" CodPostal="10818" Provincia="C&#225;ceres" Telefono="927 013000" Password3="biblioteca" ControlAcceso="False" Validez="1"/>
+	</Centros>
+	<Funciones>
+		<Funcion CodigoFuncion="adapt." Funcion="adaptador, adaptaci&#243;n"/>
+		<Funcion CodigoFuncion="anot." Funcion="anotador"/>
+		<Funcion CodigoFuncion="arr." Funcion="arreglista, arreglo"/>
+		<Funcion CodigoFuncion="col." Funcion="colaborador, colaboraci&#243;n"/>
+		<Funcion CodigoFuncion="com." Funcion="comentarista"/>
+		<Funcion CodigoFuncion="comp." Funcion="compilador, compilaci&#243;n, compositor musical"/>
+		<Funcion CodigoFuncion="coord." Funcion="coordinador, coordinaci&#243;n"/>
+		<Funcion CodigoFuncion="dir." Funcion="director, direcci&#243;n"/>
+		<Funcion CodigoFuncion="ed. lit." Funcion="editor literario"/>
+		<Funcion CodigoFuncion="ed. mus." Funcion="editor musical"/>
+		<Funcion CodigoFuncion="il." Funcion="ilustrador, ilustraci&#243;n"/>
+		<Funcion CodigoFuncion="int." Funcion="int&#233;rprete"/>
+		<Funcion CodigoFuncion="pr." Funcion="prologuista, pr&#243;logo"/>
+		<Funcion CodigoFuncion="rec." Funcion="recopilador, recopilaci&#243;n"/>
+		<Funcion CodigoFuncion="red." Funcion="redactor, redacci&#243;n"/>
+		<Funcion CodigoFuncion="sel." Funcion="seleccionador, selecci&#243;n"/>
+		<Funcion CodigoFuncion="trad." Funcion="traductor, traducci&#243;n"/>
+	</Funciones>
+	<Aplicaciones>
+		<Aplicacion IdAplicacion="170" Aplicacion="Superior"/>
+		<Aplicacion IdAplicacion="171" Aplicacion="Infantil"/>
+		<Aplicacion IdAplicacion="172" Aplicacion="Secundaria"/>
+	</Aplicaciones>
+	<Descriptores>
+		<Descriptor IdDescriptor="8669" Descriptor="General"/>
+		<Descriptor IdDescriptor="8670" Descriptor="Romance"/>
+		<Descriptor IdDescriptor="8671" Descriptor="Figuras"/>
+	</Descriptores>
+	<Editoriales>
+		<Editorial IdEditorial="36" Editorial=": Vicens Vives"/>
+		<Editorial IdEditorial="37" Editorial="Vicens Vives"/>
+		<Editorial IdEditorial="38" Editorial="Vicens-Vives"/>
+	</Editoriales>
+	<Paises>
+		<Pais ClavePais="afg" Pais="Afganist&#225;n"/>
+		<Pais ClavePais="ago" Pais="Angola"/>
+		<Pais ClavePais="alb" Pais="Albania"/>
+		<Pais ClavePais="and" Pais="Andorra"/>
+		<Pais ClavePais="are" Pais="Emiratos &#193;rabes Unidos"/>
+		<Pais ClavePais="arg" Pais="Argentina"/>
+		<Pais ClavePais="ata" Pais="Ant&#225;rtida"/>
+		<Pais ClavePais="aus" Pais="Australia"/>
+		<Pais ClavePais="aut" Pais="Austria"/>
+		<Pais ClavePais="bel" Pais="B&#233;lgica"/>
+		<Pais ClavePais="ben" Pais="Ben&#237;n"/>
+		<Pais ClavePais="bgr" Pais="Bulgaria"/>
+		<Pais ClavePais="bol" Pais="Bolivia"/>
+		<Pais ClavePais="bra" Pais="Brasil"/>
+		<Pais ClavePais="caf" Pais="Centroafricana, Rep&#250;blica"/>
+		<Pais ClavePais="can" Pais="Canad&#225;"/>
+		<Pais ClavePais="che" Pais="Suiza"/>
+		<Pais ClavePais="chl" Pais="Chile"/>
+		<Pais ClavePais="chn" Pais="China"/>
+		<Pais ClavePais="civ" Pais="Costa de Marfil"/>
+		<Pais ClavePais="cmr" Pais="Camer&#250;n, Rep&#250;blica Unida"/>
+		<Pais ClavePais="cog" Pais="Congo"/>
+		<Pais ClavePais="col" Pais="Colombia"/>
+		<Pais ClavePais="cri" Pais="Costa Rica"/>
+		<Pais ClavePais="csk" Pais="Checoslovaquia"/>
+		<Pais ClavePais="cub" Pais="Cuba"/>
+		<Pais ClavePais="cyp" Pais="Chipre"/>
+		<Pais ClavePais="ddr" Pais="Alemania (R.D.)"/>
+		<Pais ClavePais="deu" Pais="Alemania (R.F.)"/>
+		<Pais ClavePais="dnk" Pais="Dinamarca"/>
+		<Pais ClavePais="dom" Pais="Rep&#250;blica Dominicana"/>
+		<Pais ClavePais="dza" Pais="Argelia"/>
+		<Pais ClavePais="ecu" Pais="Ecuador"/>
+		<Pais ClavePais="egy" Pais="Egipto"/>
+		<Pais ClavePais="esh" Pais="S&#225;hara Occidental"/>
+		<Pais ClavePais="esp" Pais="Espa&#241;a"/>
+		<Pais ClavePais="eth" Pais="Etiop&#237;a"/>
+		<Pais ClavePais="fin" Pais="Finlandia"/>
+		<Pais ClavePais="flk" Pais="Malvinas, Islas"/>
+		<Pais ClavePais="fra" Pais="Francia"/>
+		<Pais ClavePais="gab" Pais="Gab&#243;n"/>
+		<Pais ClavePais="gbr" Pais="Reino Unido"/>
+		<Pais ClavePais="gha" Pais="Ghana"/>
+		<Pais ClavePais="gib" Pais="Gibraltar"/>
+		<Pais ClavePais="gin" Pais="Guinea"/>
+		<Pais ClavePais="gmb" Pais="Gambia"/>
+		<Pais ClavePais="gnb" Pais="Guinea Bissau"/>
+		<Pais ClavePais="gnq" Pais="Guinea Ecuatorial"/>
+		<Pais ClavePais="grc" Pais="Grecia"/>
+		<Pais ClavePais="grd" Pais="Granada"/>
+		<Pais ClavePais="grl" Pais="Groenlandia"/>
+		<Pais ClavePais="gtm" Pais="Guatemala"/>
+		<Pais ClavePais="hkg" Pais="Hong Kong"/>
+		<Pais ClavePais="hnd" Pais="Honduras"/>
+		<Pais ClavePais="hti" Pais="Hait&#237;"/>
+		<Pais ClavePais="hun" Pais="Hungr&#237;a"/>
+		<Pais ClavePais="idn" Pais="Indonesia"/>
+		<Pais ClavePais="ind" Pais="India"/>
+		<Pais ClavePais="irl" Pais="Irlanda"/>
+		<Pais ClavePais="irn" Pais="Ir&#225;n"/>
+		<Pais ClavePais="irq" Pais="Iraq"/>
+		<Pais ClavePais="isl" Pais="Islandia"/>
+		<Pais ClavePais="isr" Pais="Israel"/>
+		<Pais ClavePais="ita" Pais="Italia"/>
+		<Pais ClavePais="jam" Pais="Jamaica"/>
+		<Pais ClavePais="jor" Pais="Jordania"/>
+		<Pais ClavePais="jpn" Pais="Jap&#243;n"/>
+		<Pais ClavePais="ken" Pais="Kenya"/>
+		<Pais ClavePais="khm" Pais="Kampuchea Democr&#225;tica"/>
+		<Pais ClavePais="kor" Pais="Corea, Rep&#250;blica de"/>
+		<Pais ClavePais="kwt" Pais="Kuwait"/>
+		<Pais ClavePais="lao" Pais="Lao, R.D. Popular"/>
+		<Pais ClavePais="lbn" Pais="L&#237;bano"/>
+		<Pais ClavePais="lbr" Pais="Liberia"/>
+		<Pais ClavePais="lby" Pais="Libia"/>
+		<Pais ClavePais="lie" Pais="Liechtenstein"/>
+		<Pais ClavePais="lka" Pais="Sri Lanka"/>
+		<Pais ClavePais="lux" Pais="Luxemburgo"/>
+		<Pais ClavePais="mac" Pais="Macao"/>
+		<Pais ClavePais="mar" Pais="Marruecos"/>
+		<Pais ClavePais="mco" Pais="M&#243;naco"/>
+		<Pais ClavePais="mdg" Pais="Madagascar"/>
+		<Pais ClavePais="mdv" Pais="Maldivas"/>
+		<Pais ClavePais="mex" Pais="M&#233;xico"/>
+		<Pais ClavePais="mlt" Pais="Malta"/>
+		<Pais ClavePais="mng" Pais="Mongolia"/>
+		<Pais ClavePais="moz" Pais="Mozambique"/>
+		<Pais ClavePais="mrt" Pais="Mauritania"/>
+		<Pais ClavePais="mtg" Pais="Martinica"/>
+		<Pais ClavePais="mwi" Pais="Malawi"/>
+		<Pais ClavePais="mys" Pais="Malasia"/>
+		<Pais ClavePais="nam" Pais="Namibia"/>
+		<Pais ClavePais="ner" Pais="N&#237;ger"/>
+		<Pais ClavePais="nga" Pais="Nigeria"/>
+		<Pais ClavePais="nic" Pais="Nicaragua"/>
+		<Pais ClavePais="nld" Pais="Holanda"/>
+		<Pais ClavePais="nor" Pais="Noruega"/>
+		<Pais ClavePais="npl" Pais="Nepal"/>
+		<Pais ClavePais="nzl" Pais="Nueva Zelanda"/>
+		<Pais ClavePais="omn" Pais="Om&#225;n"/>
+		<Pais ClavePais="pak" Pais="Pakist&#225;n"/>
+		<Pais ClavePais="pan" Pais="Panam&#225;"/>
+		<Pais ClavePais="per" Pais="Per&#250;"/>
+		<Pais ClavePais="phl" Pais="Filipinas"/>
+		<Pais ClavePais="png" Pais="Pap&#250;a, Nueva Guinea"/>
+		<Pais ClavePais="pol" Pais="Polonia"/>
+		<Pais ClavePais="pri" Pais="Puerto Rico"/>
+		<Pais ClavePais="prk" Pais="Corea, Rep&#250;blica Democr&#225;tica"/>
+		<Pais ClavePais="prt" Pais="Portugal"/>
+		<Pais ClavePais="pry" Pais="Paraguay"/>
+		<Pais ClavePais="rom" Pais="Ruman&#237;a"/>
+		<Pais ClavePais="rwa" Pais="Ruanda"/>
+		<Pais ClavePais="sau" Pais="Arabia Saud&#237;"/>
+		<Pais ClavePais="sdn" Pais="Sud&#225;n"/>
+		<Pais ClavePais="sen" Pais="Senegal"/>
+		<Pais ClavePais="sgp" Pais="Singapur"/>
+		<Pais ClavePais="sle" Pais="Sierra Leona"/>
+		<Pais ClavePais="slv" Pais="El Salvador"/>
+		<Pais ClavePais="smr" Pais="San Marino"/>
+		<Pais ClavePais="som" Pais="Somalia"/>
+		<Pais ClavePais="sun" Pais="URSS"/>
+		<Pais ClavePais="sur" Pais="Surinam"/>
+		<Pais ClavePais="swe" Pais="Suecia"/>
+		<Pais ClavePais="swz" Pais="Swazilandia"/>
+		<Pais ClavePais="syr" Pais="Siria, Rep&#250;blica &#193;rabe de"/>
+		<Pais ClavePais="tcd" Pais="Chad"/>
+		<Pais ClavePais="tgo" Pais="Togo"/>
+		<Pais ClavePais="tha" Pais="Tailandia"/>
+		<Pais ClavePais="tto" Pais="Trinidad y Tobago"/>
+		<Pais ClavePais="tun" Pais="T&#250;nez"/>
+		<Pais ClavePais="tur" Pais="Turqu&#237;a"/>
+		<Pais ClavePais="twn" Pais="Taiw&#225;n"/>
+		<Pais ClavePais="tza" Pais="Tanzania, Rep&#250;blica Unida"/>
+		<Pais ClavePais="uga" Pais="Uganda"/>
+		<Pais ClavePais="ury" Pais="Uruguay"/>
+		<Pais ClavePais="usa" Pais="Estados Unidos"/>
+		<Pais ClavePais="vat" Pais="Vaticano, E. Ciudad"/>
+		<Pais ClavePais="ven" Pais="Venezuela"/>
+		<Pais ClavePais="vnm" Pais="Vietnam"/>
+		<Pais ClavePais="xxx" Pais="Desconocido"/>
+		<Pais ClavePais="yem" Pais="Yemen"/>
+		<Pais ClavePais="ymd" Pais="Yemen Democr&#225;tico"/>
+		<Pais ClavePais="yug" Pais="Yugoslavia"/>
+		<Pais ClavePais="zaf" Pais="&#193;frica del Sur"/>
+		<Pais ClavePais="zar" Pais="Zaire"/>
+		<Pais ClavePais="zmb" Pais="Zambia"/>
+		<Pais ClavePais="zwe" Pais="Zimbabwe"/>
+	</Paises>
+	<Lenguas>
+		<Lengua ClaveLengua="afr" Lengua="Afrikaans"/>
+		<Lengua ClaveLengua="akk" Lengua="Akkadio"/>
+		<Lengua ClaveLengua="alb" Lengua="Alban&#233;s"/>
+		<Lengua ClaveLengua="ale" Lengua="Aleutiano"/>
+		<Lengua ClaveLengua="alg" Lengua="Algonquino"/>
+		<Lengua ClaveLengua="ang" Lengua="Saj&#243;n"/>
+		<Lengua ClaveLengua="ara" Lengua="&#193;rabe"/>
+		<Lengua ClaveLengua="arc" Lengua="Arameo"/>
+		<Lengua ClaveLengua="arg" Lengua="Aragon&#233;s"/>
+		<Lengua ClaveLengua="arm" Lengua="Armenio"/>
+		<Lengua ClaveLengua="arn" Lengua="Araucano"/>
+		<Lengua ClaveLengua="aym" Lengua="Aimara"/>
+		<Lengua ClaveLengua="aze" Lengua="Azerbaijan&#233;s"/>
+		<Lengua ClaveLengua="bab" Lengua="Bable"/>
+		<Lengua ClaveLengua="bal" Lengua="Balear"/>
+		<Lengua ClaveLengua="baq" Lengua="Vasco"/>
+		<Lengua ClaveLengua="bel" Lengua="Bielorruso"/>
+		<Lengua ClaveLengua="ber" Lengua="Bereber"/>
+		<Lengua ClaveLengua="bre" Lengua="Bret&#243;n"/>
+		<Lengua ClaveLengua="bul" Lengua="B&#250;lgaro"/>
+		<Lengua ClaveLengua="cai" Lengua="Indios Am&#233;rica Central"/>
+		<Lengua ClaveLengua="cat" Lengua="Catal&#225;n"/>
+		<Lengua ClaveLengua="chi" Lengua="Chino"/>
+		<Lengua ClaveLengua="cop" Lengua="Copto"/>
+		<Lengua ClaveLengua="cp1" Lengua="Amb&#233;"/>
+		<Lengua ClaveLengua="cpp" Lengua="L. Basadas Portugu&#233;s"/>
+		<Lengua ClaveLengua="cze" Lengua="Checo"/>
+		<Lengua ClaveLengua="dan" Lengua="Dan&#233;s"/>
+		<Lengua ClaveLengua="dut" Lengua="Neerland&#233;s"/>
+		<Lengua ClaveLengua="egy" Lengua="Egipcio"/>
+		<Lengua ClaveLengua="eng" Lengua="Ingl&#233;s"/>
+		<Lengua ClaveLengua="esp" Lengua="Esperanto"/>
+		<Lengua ClaveLengua="est" Lengua="Estoniano"/>
+		<Lengua ClaveLengua="fin" Lengua="Finland&#233;s"/>
+		<Lengua ClaveLengua="fre" Lengua="Franc&#233;s"/>
+		<Lengua ClaveLengua="fri" Lengua="Fris&#243;n"/>
+		<Lengua ClaveLengua="gae" Lengua="Ga&#233;lico"/>
+		<Lengua ClaveLengua="gag" Lengua="Gallego"/>
+		<Lengua ClaveLengua="gem" Lengua="Lenguas Germ&#225;nicas"/>
+		<Lengua ClaveLengua="geo" Lengua="Georgiano"/>
+		<Lengua ClaveLengua="ger" Lengua="Alem&#225;n"/>
+		<Lengua ClaveLengua="grc" Lengua="Griego Cl&#225;sico"/>
+		<Lengua ClaveLengua="gre" Lengua="Griego Moderno"/>
+		<Lengua ClaveLengua="gua" Lengua="Guaran&#237;"/>
+		<Lengua ClaveLengua="heb" Lengua="Hebreo"/>
+		<Lengua ClaveLengua="hin" Lengua="Hindi"/>
+		<Lengua ClaveLengua="hun" Lengua="H&#250;ngaro"/>
+		<Lengua ClaveLengua="ice" Lengua="Island&#233;s"/>
+		<Lengua ClaveLengua="inc" Lengua="Indio"/>
+		<Lengua ClaveLengua="ind" Lengua="Indonesio"/>
+		<Lengua ClaveLengua="ine" Lengua="Indoeuropeo"/>
+		<Lengua ClaveLengua="ira" Lengua="Iran&#237;"/>
+		<Lengua ClaveLengua="iri" Lengua="Irland&#233;s"/>
+		<Lengua ClaveLengua="ita" Lengua="Italiano"/>
+		<Lengua ClaveLengua="jpn" Lengua="Japon&#233;s"/>
+		<Lengua ClaveLengua="kir" Lengua="Kirguiz"/>
+		<Lengua ClaveLengua="kor" Lengua="Coreano"/>
+		<Lengua ClaveLengua="lad" Lengua="Ladino"/>
+		<Lengua ClaveLengua="lap" Lengua="Lap&#243;n"/>
+		<Lengua ClaveLengua="lat" Lengua="Lat&#237;n"/>
+		<Lengua ClaveLengua="lav" Lengua="Letonio"/>
+		<Lengua ClaveLengua="lit" Lengua="Lituano"/>
+		<Lengua ClaveLengua="mac" Lengua="Macedonio"/>
+		<Lengua ClaveLengua="mas" Lengua="Masai"/>
+		<Lengua ClaveLengua="mla" Lengua="Malgache"/>
+		<Lengua ClaveLengua="mon" Lengua="Mongol"/>
+		<Lengua ClaveLengua="mul" Lengua="Varias Lenguas"/>
+		<Lengua ClaveLengua="myn" Lengua="Maya"/>
+		<Lengua ClaveLengua="nah" Lengua="Nahua"/>
+		<Lengua ClaveLengua="ni1" Lengua="Bant&#250; (Lenguas)"/>
+		<Lengua ClaveLengua="ni2" Lengua="Bubi"/>
+		<Lengua ClaveLengua="nic" Lengua="N&#237;ger-Congo"/>
+		<Lengua ClaveLengua="nor" Lengua="Noruego"/>
+		<Lengua ClaveLengua="oto" Lengua="Otomi"/>
+		<Lengua ClaveLengua="paa" Lengua="Papu"/>
+		<Lengua ClaveLengua="peo" Lengua="Persa Antiguo"/>
+		<Lengua ClaveLengua="per" Lengua="Persa Moderno"/>
+		<Lengua ClaveLengua="pol" Lengua="Polaco"/>
+		<Lengua ClaveLengua="por" Lengua="Portugu&#233;s"/>
+		<Lengua ClaveLengua="pro" Lengua="Provenzal"/>
+		<Lengua ClaveLengua="pus" Lengua="Afgano"/>
+		<Lengua ClaveLengua="que" Lengua="Qu&#233;chua"/>
+		<Lengua ClaveLengua="roh" Lengua="Retorrom&#225;nico"/>
+		<Lengua ClaveLengua="rom" Lengua="Roman&#237;"/>
+		<Lengua ClaveLengua="rum" Lengua="Rumano"/>
+		<Lengua ClaveLengua="rus" Lengua="Ruso"/>
+		<Lengua ClaveLengua="san" Lengua="S&#225;nscrito"/>
+		<Lengua ClaveLengua="scc" Lengua="Servio"/>
+		<Lengua ClaveLengua="scr" Lengua="Croata"/>
+		<Lengua ClaveLengua="sem" Lengua="Lenguas Sem&#237;ticas"/>
+		<Lengua ClaveLengua="sla" Lengua="Lenguas Eslavas"/>
+		<Lengua ClaveLengua="slo" Lengua="Eslovaco"/>
+		<Lengua ClaveLengua="slv" Lengua="Esloveno"/>
+		<Lengua ClaveLengua="som" Lengua="Somal&#246;"/>
+		<Lengua ClaveLengua="spa" Lengua="Espa&#241;ol"/>
+		<Lengua ClaveLengua="sux" Lengua="Sumerio"/>
+		<Lengua ClaveLengua="swa" Lengua="Swahili"/>
+		<Lengua ClaveLengua="swe" Lengua="Sueco"/>
+		<Lengua ClaveLengua="syr" Lengua="Siriaco"/>
+		<Lengua ClaveLengua="tag" Lengua="Tagalo"/>
+		<Lengua ClaveLengua="tha" Lengua="Tai"/>
+		<Lengua ClaveLengua="tib" Lengua="Tibetano"/>
+		<Lengua ClaveLengua="tur" Lengua="Turco"/>
+		<Lengua ClaveLengua="tut" Lengua="Turco-T&#225;rtaro"/>
+		<Lengua ClaveLengua="ukr" Lengua="Ucraniano"/>
+		<Lengua ClaveLengua="und" Lengua="Indeterminada"/>
+		<Lengua ClaveLengua="val" Lengua="Valenciano"/>
+		<Lengua ClaveLengua="wel" Lengua="Gal&#233;s"/>
+		<Lengua ClaveLengua="yid" Lengua="Yiddish"/>
+		<Lengua ClaveLengua="zap" Lengua="Zapoteco"/>
+		<Lengua ClaveLengua="zul" Lengua="Zul&#250;"/>
+	</Lenguas>
+	<TiposFondo>
+		<TipoFondo IdTipoFondo="1" TipoFondo="Libro"/>
+		<TipoFondo IdTipoFondo="2" TipoFondo="Video"/>
+		<TipoFondo IdTipoFondo="3" TipoFondo="Archivo de ordenador"/>
+		<TipoFondo IdTipoFondo="4" TipoFondo="Grabaci&#243;n sonora"/>
+		<TipoFondo IdTipoFondo="5" TipoFondo="Documento gr&#225;fico"/>
+		<TipoFondo IdTipoFondo="6" TipoFondo="Art&#237;culo de revista"/>
+	</TiposFondo>
+	<PrestamosEstadisticas/>
+	<Fondos>
+		<Fondo IdTipoFondo="1" CodigoExterno="00000000118918" CodigoLocal="20130000289" Transaccion="20130610:09443220" IntroInfo="130610" FechaPublicacion1="1998" Titulo="Urchin" RestoPortada="/ Disney" FechaEdicion="1998" Extension="82 p." Dimensiones="; 18 cm" CaracteristicasFisicas=": il." Pais="esp" Lengua="spa" DepositoLegal="LE 1127-1998" ISBN="84-392-8835-2" ISBN2="8439288352" LugarPublicacion="Madrid" Editorial="36" IdAutor="171">
+			<Ejemplares>
+				<Ejemplar NumEjemplar="1" CodigoEjemplar="000309X" NumRegistro="309" FechaAlta="10/06/2013" IdTiposEjemplar="2" Sig1="087.5" Sig2="AUT" Sig3="urc" Prestado="False"/>
+			</Ejemplares>
+			<Prestamos/>
+			<FuncionesAutor/>
+			<CDUs/>
+			<FondoAplicaciones>
+				<FondoAplicacion IdAplicacion="170"/>
+			</FondoAplicaciones>
+			<FondoDescriptores>
+				<Descriptor IdDescriptor="8669"/>
+			</FondoDescriptores>
+		</Fondo>
+		<Fondo IdTipoFondo="1" CodigoExterno="BPE19980057311" CodigoLocal="20130000290" Transaccion="20130610:09485596" IntroInfo="130610" FechaPublicacion1="1989" Titulo="Mi hermana Clara y el rat&#243;n de regalo" RestoPortada="Dimiter Inkiow ; ilustrado por Fritz Goller ; traducci&#243;n, Eladio Mart&#237;nez Bernaldo de Quir&#243;s" Coleccion="La torre y la flor . Mi hermana Clara y yo" FechaEdicion="1989" NumeroSerie="108" Extension="88, [8] p." Dimensiones="18 cm" CaracteristicasFisicas="il. col. n." Pais="esp" Lengua="spa" ISBN="84-241-5769-9" ISBN2="8424157699" LugarPublicacion="Le&#243;n" Editorial="37" IdAutor="172">
+			<Ejemplares>
+				<Ejemplar NumEjemplar="1" CodigoEjemplar="000310B" NumRegistro="310" FechaAlta="10/06/2013" IdTiposEjemplar="3" Sig1="087" Sig2="INK" Sig3="her" Prestado="False"/>
+			</Ejemplares>
+			<Prestamos/>
+			<FuncionesAutor/>
+			<CDUs/>
+			<FondoAplicaciones>
+				<FondoAplicacion IdAplicacion="171"/>
+			</FondoAplicaciones>
+			<FondoDescriptores>
+				<Descriptor IdDescriptor="8670"/>
+			</FondoDescriptores>
+		</Fondo>
+		<Fondo IdTipoFondo="1" CodigoExterno="BPE19980065976" CodigoLocal="20130000291" Transaccion="20130610:09500034" IntroInfo="130610" FechaPublicacion1="1991" Titulo="Canci&#243;n de Navidad" RestoPortada="Charles Dickens ; ilustraciones, Michael Foreman ; traducci&#243;n, Francisco Torres Oliver" FechaEdicion="1991" Extension="148 p. [3] h." Dimensiones="22 cm" CaracteristicasFisicas="il. col. y n." Pais="esp" Lengua="spa" ISBN="84-316-2811-1" ISBN2="8431628111" LugarPublicacion="Barcelona" Editorial="38" IdAutor="173">
+			<Ejemplares>
+				<Ejemplar NumEjemplar="1" CodigoEjemplar="000311N" NumRegistro="311" FechaAlta="10/06/2013" IdTiposEjemplar="4" Sig1="82-39" Sig2="DIC" Sig3="can" Prestado="False"/>
+			</Ejemplares>
+			<Prestamos/>
+			<FuncionesAutor/>
+			<CDUs/>
+			<FondoAplicaciones>
+				<FondoAplicacion IdAplicacion="172"/>
+			</FondoAplicaciones>
+			<FondoDescriptores/>
+		</Fondo>
+	</Fondos>
+</Fichero>

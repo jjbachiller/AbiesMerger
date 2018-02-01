@@ -1,5 +1,5 @@
+from abiesmerger.engine.abiesutils import sameValues, getMaxAttribute, getAbiesCode
 import xml.etree.ElementTree as etree
-import abiesmerger.engine.abiesutils
 import os, errno, re
 
 class AbiesMergeEngine():
@@ -9,26 +9,28 @@ class AbiesMergeEngine():
     original = secondary = None
 
     def __init__(self, original):
-        self.original = etree.parse(original)
+        self.original = etree.fromstring(original)
 
     def setSecondaryFile(self, secondary, suffix=None):
-        self.secondary = etree.parse(secondary)
+        self.secondary = etree.fromstring(secondary)
         self.suffix = suffix
 
     def addSufixToValue(self, sectionName, attrName):
         if (self.suffix is None):
             return
 
-        rootSecondary = self.secondary.getroot()
-        sectionSecondary = rootSecondary.find(sectionName)
+        # rootSecondary = self.secondary.getroot()
+        # sectionSecondary = rootSecondary.find(sectionName)
+        sectionSecondary = self.secondary.find(sectionName)
 
         for child in sectionSecondary.getchildren():
             attrValue = child.get(attrName) + self.SUFIX_SEPARATOR + self.suffix
             child.set(attrName, attrValue)
 
     def getLastEjemplarCodeNumber(self):
-        root = self.original.getroot()
-        fondos = root.find('Fondos')
+        # root = self.original.getroot()
+        # fondos = root.find('Fondos')
+        fondos = self.original.find('Fondos')
         lastCodeNumber = 0;
         for fondo in fondos.getchildren():
             ejemplares = fondo.find('Ejemplares')
@@ -47,11 +49,13 @@ class AbiesMergeEngine():
     def removeSameValues(self, sectionName, attrName, idName):
         repeatedIdDictionary = {}
 
-        rootOriginal = self.original.getroot()
-        sectionOriginal = rootOriginal.find(sectionName)
+        # rootOriginal = self.original.getroot()
+        # sectionOriginal = rootOriginal.find(sectionName)
+        sectionOriginal = self.original.find(sectionName)
 
-        rootSecondary = self.secondary.getroot()
-        sectionSecondary = rootSecondary.find(sectionName)
+        # rootSecondary = self.secondary.getroot()
+        # sectionSecondary = rootSecondary.find(sectionName)
+        sectionSecondary = self.secondary.find(sectionName)
 
         for secondaryChild in sectionSecondary.getchildren():
             secondaryName = secondaryChild.get(attrName)
@@ -79,12 +83,14 @@ class AbiesMergeEngine():
         newIdDictionary = {}
 
         # Get last Id in the original file
-        rootOriginal = self.original.getroot()
-        sectionOriginal = rootOriginal.find(sectionName)
+        # rootOriginal = self.original.getroot()
+        # sectionOriginal = rootOriginal.find(sectionName)
+        sectionOriginal = self.original.find(sectionName)
         lastId = getMaxAttribute(idName, sectionOriginal.getchildren())
 
-        rootSecondary = self.secondary.getroot()
-        sectionSecondary = rootSecondary.find(sectionName)
+        # rootSecondary = self.secondary.getroot()
+        # sectionSecondary = rootSecondary.find(sectionName)
+        sectionSecondary = self.secondary.find(sectionName)
 
         for child in sectionSecondary.getchildren():
             lastId += 1
@@ -97,45 +103,15 @@ class AbiesMergeEngine():
         return newIdDictionary.copy()
 
     """
-    Copy the values of all the sections from the secondary file to the same section
-    in the original file, and save the correspondency dictionary
+    Merge the 'Fondos' section mantaining the correct id reference. It requires
+    that the rest of the sections are filled in the object.
 
     Return:
     """
-    def copyAbiesSectionsValues(self):
-        #Mezclando TipoEjemplar
-        duplicatesTiposEjemplarIds = self.removeSameValues('TiposEjemplar', 'TipoEjemplar', 'IdTipoEjemplar')
-        self.tiposEjemplarIds = self.copySectionValues('TiposEjemplar', 'IdTipoEjemplar')
-        self.tiposEjemplarIds.update(duplicatesTiposEjemplarIds)
-        #Mezclando ubicaciones
-        self.addSufixToValue('Ubicaciones', 'Ubicacion')
-        self.ubicacionesIds = self.copySectionValues('Ubicaciones', 'IdUbicacion')
-        #Mezclando autores
-        self.autoresIds = self.copySectionValues('Autores', 'IdAutor')
-        #Mezclando Aplicaciones
-        self.aplicacionesIds = self.copySectionValues('Aplicaciones', 'IdAplicacion')
-        #Mezclando Descriptores
-        self.descriptoresIds = self.copySectionValues('Descriptores', 'IdDescriptor')
-        #Mezclando editoriales
-        self.editorialesIds = self.copySectionValues('Editoriales', 'IdEditorial')
-
-
-    """
-    Merge the secondary file values to the original file, even the 'Fondos' and
-    mantain the correct id reference
-
-    Return:
-    """
-    def mergeAbiesBackup(self):
-        self.copyAbiesSectionsValues()
-
+    def mergeAbiesFondos(self):
         lastEjemplarCodeNumber = self.getLastEjemplarCodeNumber()
-
-        rootOriginal = self.original.getroot()
-        fondosOriginal = rootOriginal.find('Fondos')
-
-        rootSecondary = self.secondary.getroot()
-        fondosSecondary = rootSecondary.find('Fondos')
+        fondosOriginal = self.original.find('Fondos')
+        fondosSecondary = self.secondary.find('Fondos')
 
         for fondo in fondosSecondary.getchildren():
             editorialOld = fondo.get('Editorial')
@@ -163,13 +139,34 @@ class AbiesMergeEngine():
                 descriptor.set('IdDescriptor', self.descriptoresIds[idDescriptorOld])
 
             fondosOriginal.append(fondo)
-        print(self.tiposEjemplarIds)
 
-    def saveMerge(self, path):
-        try:
-            os.makedirs(path)
-        except OSError as e:
-            # If raise an exception different to "path already exist" propagate it
-            if e.errno != errno.EEXIST:
-                raise
-        self.original.write(os.path.join(path, self.RESULT_XML_NAME))
+    """
+    Copy the values of all the sections from the secondary file to the same section
+    in the original file.
+
+    Return: the xml merge content as string
+    """
+    def mergeAbiesFiles(self):
+        #Mezclando TipoEjemplar
+        duplicatesTiposEjemplarIds = self.removeSameValues('TiposEjemplar', 'TipoEjemplar', 'IdTipoEjemplar')
+        self.tiposEjemplarIds = self.copySectionValues('TiposEjemplar', 'IdTipoEjemplar')
+        self.tiposEjemplarIds.update(duplicatesTiposEjemplarIds)
+        #Mezclando ubicaciones
+        self.addSufixToValue('Ubicaciones', 'Ubicacion')
+        self.ubicacionesIds = self.copySectionValues('Ubicaciones', 'IdUbicacion')
+        #Mezclando autores
+        self.autoresIds = self.copySectionValues('Autores', 'IdAutor')
+        #Mezclando Aplicaciones
+        self.aplicacionesIds = self.copySectionValues('Aplicaciones', 'IdAplicacion')
+        #Mezclando Descriptores
+        self.descriptoresIds = self.copySectionValues('Descriptores', 'IdDescriptor')
+        #Mezclando editoriales
+        self.editorialesIds = self.copySectionValues('Editoriales', 'IdEditorial')
+        #Mezclando fondos
+        self.mergeAbiesFondos()
+
+        return self.original
+
+    def getXMLString(self):
+        # return etree.tostring(self.original, encoding='unicode', method='xml')
+        return etree.tostring(self.original)

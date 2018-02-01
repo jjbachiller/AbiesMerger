@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-holis
+<img src="{% static "images/download-yellow.png" %}" alt="download">
+<div class="mt-5">
+  <h5 class="card-title">Se han combinado las bibliotecas con éxito!</h5>
+  <h6>Si la desarga no comienza automáticamente, haga click <a href="/{{ path }}" class="text-warning">aquí</a></h6>
+</div>
+{# iframe para la descarga automática #}
+<iframe src="/{{ path}}" width="1" height="1" fameborder="0"></iframe>
+
+<div class="form-row">
+  <div class="col">
+    <a href="{% url 'home' %}" class="btn btn-warning"><< Combinar otra biblioteca</a>
+  </div>
+</div>
 {% endblock %}
