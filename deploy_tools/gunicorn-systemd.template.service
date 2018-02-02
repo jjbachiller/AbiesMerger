@@ -1,12 +1,12 @@
 [Unit]
-Description=Gunicorn server for SITENAME
+Description=Gunicorn server for abiesmerger.cpr
 
 [Service]
 Restart=on-failure
 User=juan
-WorkingDirectory=/home/juan/sites/SITENAME
-ExecStart=/home/juan/sites/SITENAME/virtualenv/bin/gunicorn \
-  --bind unix:/tmp/SITENAME.socket \
+WorkingDirectory=/home/juan/sites/abiesmerger.cpr
+ExecStart=/home/juan/sites/abiesmerger.cpr/virtualenv/bin/gunicorn \
+  --bind unix:/tmp/abiesmerger.cpr.socket \
   superlists.wsgi:application
 
 [Install]
