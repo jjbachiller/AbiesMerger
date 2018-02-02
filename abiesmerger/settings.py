@@ -118,6 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 # Project constants
@@ -126,4 +127,4 @@ DOWNLOAD_FOLDER = "downloads"
 
 # Media downloads
 MEDIA_ROOT = os.path.join(BASE_DIR, DOWNLOAD_FOLDER)
-MEDIA_URL = "downloads/"
+MEDIA_URL = "/downloads/"
