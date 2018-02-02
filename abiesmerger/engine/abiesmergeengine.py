@@ -4,7 +4,6 @@ import os, errno, re
 
 class AbiesMergeEngine():
 
-    RESULT_XML_NAME = "ExportAbies2-Catalogo.xml"
     SUFIX_SEPARATOR = " "
     original = secondary = None
 

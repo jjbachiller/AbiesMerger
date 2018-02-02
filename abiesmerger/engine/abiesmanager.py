@@ -26,14 +26,7 @@ class AbiesManager():
         # Creamos un MergeEngine con la biblioteca base
         abiesMerger = AbiesMergeEngine(self.base.getAbiesData())
         # Y le anexamos a esta cada biblioteca secundaria con su sufijo
-        print("Antes del for en merge")
-        print(self.secondaries)
-        print(self.suffixes)
-        print("Ya está")
         for secondary, suffix in zip(self.secondaries, self.suffixes):
-            print("Antes de la llamada")
-            print("Procesando sufijo " + suffix)
-            print("Después de la llamada")
             abiesMerger.setSecondaryFile(secondary.getAbiesData(), suffix)
             abiesMerger.mergeAbiesFiles()
         # Crear archivo para descarga
@@ -49,6 +42,7 @@ class AbiesManager():
         self.downloadableFile.createLogFileFromStream(baseLogFile)
         baseCduFile = self.base.getCduFile()
         self.downloadableFile.createCduFileFromStream(baseCduFile)
+        # Devolvemos el nombre de la carpeta que contiene el archivo zip
         return randomFolderName
 
     def getRandomFolderName(self):
