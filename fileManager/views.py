@@ -26,7 +26,7 @@ def merge(request):
             return redirect(reverse('download', kwargs={'folder':downloadId,}))
         except Exception as error:
             messages.add_message(request, messages.ERROR, repr(error))
-            # raise(error)
+            raise(error)
     return redirect('home')
 
 

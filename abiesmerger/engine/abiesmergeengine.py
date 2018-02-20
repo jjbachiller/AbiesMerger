@@ -18,8 +18,6 @@ class AbiesMergeEngine():
         if (not self.suffix):
             return
 
-        # rootSecondary = self.secondary.getroot()
-        # sectionSecondary = rootSecondary.find(sectionName)
         sectionSecondary = self.secondary.find(sectionName)
 
         for child in sectionSecondary.getchildren():
@@ -27,8 +25,6 @@ class AbiesMergeEngine():
             child.set(attrName, attrValue)
 
     def getLastEjemplarCodeNumber(self):
-        # root = self.original.getroot()
-        # fondos = root.find('Fondos')
         fondos = self.original.find('Fondos')
         lastCodeNumber = 0;
         for fondo in fondos.getchildren():
@@ -48,12 +44,7 @@ class AbiesMergeEngine():
     def removeSameValues(self, sectionName, attrName, idName):
         repeatedIdDictionary = {}
 
-        # rootOriginal = self.original.getroot()
-        # sectionOriginal = rootOriginal.find(sectionName)
         sectionOriginal = self.original.find(sectionName)
-
-        # rootSecondary = self.secondary.getroot()
-        # sectionSecondary = rootSecondary.find(sectionName)
         sectionSecondary = self.secondary.find(sectionName)
 
         for secondaryChild in sectionSecondary.getchildren():
@@ -82,13 +73,9 @@ class AbiesMergeEngine():
         newIdDictionary = {}
 
         # Get last Id in the original file
-        # rootOriginal = self.original.getroot()
-        # sectionOriginal = rootOriginal.find(sectionName)
         sectionOriginal = self.original.find(sectionName)
         lastId = getMaxAttribute(idName, sectionOriginal.getchildren())
 
-        # rootSecondary = self.secondary.getroot()
-        # sectionSecondary = rootSecondary.find(sectionName)
         sectionSecondary = self.secondary.find(sectionName)
 
         for child in sectionSecondary.getchildren():
@@ -114,28 +101,37 @@ class AbiesMergeEngine():
 
         for fondo in fondosSecondary.getchildren():
             editorialOld = fondo.get('Editorial')
-            fondo.set('Editorial', self.editorialesIds[editorialOld])
+            if (editorialOld is not None):
+                fondo.set('Editorial', self.editorialesIds[editorialOld])
             idAutorOld = fondo.get('IdAutor')
-            fondo.set('IdAutor', self.autoresIds[idAutorOld])
+            if (idAutorOld is not None):
+                fondo.set('IdAutor', self.autoresIds[idAutorOld])
             ejemplares = fondo.find('Ejemplares')
             for ejemplar in [] if (ejemplares is None) else ejemplares.getchildren():
                 lastEjemplarCodeNumber += 1
                 newAbiesCode = getAbiesCode(lastEjemplarCodeNumber)
                 ejemplar.set('CodigoEjemplar', newAbiesCode)
                 idTipoEjemplarOld = ejemplar.get('IdTiposEjemplar')
-                ejemplar.set('IdTiposEjemplar', self.tiposEjemplarIds[idTipoEjemplarOld])
+                if (idTipoEjemplarOld is not None):
+                    ejemplar.set('IdTiposEjemplar', self.tiposEjemplarIds[idTipoEjemplarOld])
+                idUbicacionOld = ejemplar.get('Ubicacion')
+                if (idUbicacionOld is not None):
+                    ejemplar.set('Ubicacion', self.ubicacionesIds[idUbicacionOld])
             funcionesAutor = fondo.find('FuncionesAutor')
             for funcionAutor in [] if (funcionesAutor is None) else funcionesAutor.getchildren():
                 idFuncionAutorOld = funcionAutor.get('IdAutor')
-                funcionAutor.set('IdAutor', self.autoresIds[idFuncionAutorOld])
+                if (idFuncionAutorOld is not None):
+                    funcionAutor.set('IdAutor', self.autoresIds[idFuncionAutorOld])
             fondoAplicaciones = fondo.find('FondoAplicaciones')
             for fondoAplicacion in [] if (fondoAplicaciones is None) else fondoAplicaciones.getchildren():
                 idAplicacionOld = fondoAplicacion.get('IdAplicacion')
-                fondoAplicacion.set('IdAplicacion', self.aplicacionesIds[idAplicacionOld])
+                if (idAplicacionOld is not None):
+                    fondoAplicacion.set('IdAplicacion', self.aplicacionesIds[idAplicacionOld])
             descriptores = fondo.find('FondoDescriptores')
             for descriptor in [] if (descriptores is None) else descriptores.getchildren():
                 idDescriptorOld = descriptor.get('IdDescriptor')
-                descriptor.set('IdDescriptor', self.descriptoresIds[idDescriptorOld])
+                if (idDescriptorOld is not None):
+                    descriptor.set('IdDescriptor', self.descriptoresIds[idDescriptorOld])
 
             fondosOriginal.append(fondo)
 
