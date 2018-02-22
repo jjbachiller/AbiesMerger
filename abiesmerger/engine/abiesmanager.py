@@ -10,12 +10,12 @@ RANDOM_FOLDER_LENGTH = 9
 
 class AbiesManager():
 
-    def __init__(self, baseZip, secondariesZip, suffixes):
+    def __init__(self, baseZip, secondariesZip, prefixes):
         # randomFolder = self.getRandomFolderName()
         # workingFolder = os.path.join(WORKING_FOLDER, randomFolder)
         self.base = AbiesFile(baseZip)
         self.secondaries = []
-        self.suffixes = suffixes
+        self.prefixes = prefixes
         for i, secondaryZip in enumerate(secondariesZip):
             abiesType = 'secondary' + str(i)
             self.secondaries.append(AbiesFile(secondaryZip))
@@ -26,8 +26,8 @@ class AbiesManager():
         # Creamos un MergeEngine con la biblioteca base
         abiesMerger = AbiesMergeEngine(self.base.getAbiesData())
         # Y le anexamos a esta cada biblioteca secundaria con su sufijo
-        for secondary, suffix in zip(self.secondaries, self.suffixes):
-            abiesMerger.setSecondaryFile(secondary.getAbiesData(), suffix)
+        for secondary, prefix in zip(self.secondaries, self.prefixes):
+            abiesMerger.setSecondaryFile(secondary.getAbiesData(), prefix)
             abiesMerger.mergeAbiesFiles()
         # Crear archivo para descarga
         randomFolderName = self.getRandomFolderName()

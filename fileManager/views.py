@@ -17,16 +17,16 @@ def merge(request):
     bsecundariaList = request.FILES.getlist('input-bsecundaria[]')
     if (not bsecundariaList):
         messages.add_message(request, messages.ERROR, 'Debe añadir al menos una biblioteca secundaria.')
-    suffixes = request.POST.getlist('suffixes[]')
+    prefixes = request.POST.getlist('prefixes[]')
 
     if (not messages.get_messages(request)):
         try:
-            manager = AbiesManager(bbase, bsecundariaList, suffixes)
+            manager = AbiesManager(bbase, bsecundariaList, prefixes)
             downloadId = manager.merge()
             return redirect(reverse('download', kwargs={'folder':downloadId,}))
         except Exception as error:
             messages.add_message(request, messages.ERROR, repr(error))
-            raise(error)
+            # raise(error)
     return redirect('home')
 
 

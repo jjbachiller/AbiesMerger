@@ -4,24 +4,24 @@ import os, errno, re
 
 class AbiesMergeEngine():
 
-    SUFIX_SEPARATOR = " "
+    PREFIX_SEPARATOR = "-"
     original = secondary = None
 
     def __init__(self, original):
         self.original = etree.fromstring(original)
 
-    def setSecondaryFile(self, secondary, suffix=None):
+    def setSecondaryFile(self, secondary, prefix=None):
         self.secondary = etree.fromstring(secondary)
-        self.suffix = suffix
+        self.prefix = prefix
 
-    def addSufixToValue(self, sectionName, attrName):
-        if (not self.suffix):
+    def addPrefixToValue(self, sectionName, attrName):
+        if (not self.prefix):
             return
 
         sectionSecondary = self.secondary.find(sectionName)
 
         for child in sectionSecondary.getchildren():
-            attrValue = child.get(attrName) + self.SUFIX_SEPARATOR + self.suffix
+            attrValue =  self.prefix.upper() + self.PREFIX_SEPARATOR + child.get(attrName)
             child.set(attrName, attrValue)
 
     def getLastEjemplarCodeNumber(self):
@@ -147,7 +147,7 @@ class AbiesMergeEngine():
         self.tiposEjemplarIds = self.copySectionValues('TiposEjemplar', 'IdTipoEjemplar')
         self.tiposEjemplarIds.update(duplicatesTiposEjemplarIds)
         #Mezclando ubicaciones
-        self.addSufixToValue('Ubicaciones', 'Ubicacion')
+        self.addPrefixToValue('Ubicaciones', 'Ubicacion')
         self.ubicacionesIds = self.copySectionValues('Ubicaciones', 'IdUbicacion')
         #Mezclando autores
         self.autoresIds = self.copySectionValues('Autores', 'IdAutor')
